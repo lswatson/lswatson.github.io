@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Play|Math Avengers</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">Math Avengers
+      </div>
+      <div class="header-navigation">
+        <div>
+          <a href="index.html">Home</a>
+        </div>
+        <div>
+          <a href="ma-playPage.html">Play</a>
+        </div>
+        <div>
+          <a href="ma-aboutPage.html">About</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="play-container">
+      <div class="sidebar">
+
+        <p class="collect">Collect the infinity stones</p>
+
+        <div class="infinity-stones">
+          <div class="space-stone" id="stone-1">
+            <img src="images/infinity-stone-space.png" alt="Space">
+          </div>
+          <div class="mind-stone" id="stone-2">
+            <img src="images/infinity-stone-mind.png" alt="Mind">
+          </div>
+          <div class="power-stone" id="stone-3">
+            <img src="images/infinity-stone-power.png" alt="Power">
+          </div>
+          <div class="reality-stone" id="stone-4">
+            <img src="images/infinity-stone-reality.png" alt="Reality">
+          </div>
+          <div class="time-stone" id="stone-5">
+            <img src="images/infinity-stone-time.png" alt="Time">
+          </div>
+          <div class="soul-stone" id="stone-6">
+            <img src="images/infinity-stone-soul.png" alt="Soul">
+          </div>
+
+        </div>
+        <div class="sidebar-hover-message">
+          <p>
+            <!-- (hover msg: explain each infinity stone) -->
+          </p>
+        </div>
+      </div>
+
+      <div class="main-play">
+        <div class="question-instruction">
+          <p class=>Find the answer to the following question.</p>
+        </div>
+        <div class="question-container">
+          <div class="question">
+            <p></p>
+          </div>
+          <div class="multiple-choice">
+            <button type="button" name="choiceA" id="a" data-index="0">A</button>
+            <button type="button" name="choiceB" id="b" data-index="1">B</button>
+            <button type="button" name="choiceC" id="c" data-index="2">C</button>
+            <button type="button" name="choiceD" id="d" data-index="3">D</button>
+          </div>
+          <div class="answer-message"></div>
+          <div class="navigationPlay-button">
+            <button type="button" name="next-button" id="next">Next Question</button>
+            <button type="button" name="reset-button" id="reset">Play Again</button>
+          </div>
+
+        </div>
+        </div>
+
+    </div>
+
+    <footer>Copyright © 2019 Math Avengers</footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

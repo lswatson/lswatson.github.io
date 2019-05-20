@@ -1,0 +1,133 @@
+[
+  {
+    "questionLabel": "Subtract: 348-120",
+    "choices": [
+      {
+        "label": 200,
+        "isCorrect": false
+      },
+      {
+        "label": 288,
+        "isCorrect": false
+      },
+      {
+        "label": 228,
+        "isCorrect": true
+      },
+      {
+        "label": 188,
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "questionLabel": "Complete the pattern: 15, 20, __, 30, 35",
+    "choices": [
+      {
+        "label": 25,
+        "isCorrect": true
+      },
+      {
+        "label": 10,
+        "isCorrect": false
+      },
+      {
+        "label": 5,
+        "isCorrect": false
+      },
+      {
+        "label": 40,
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "questionLabel": "Add: 67 + 272",
+    "choices": [
+      {
+        "label": 333,
+        "isCorrect": false
+      },
+      {
+        "label": 210,
+        "isCorrect": false
+      },
+      {
+        "label": 349,
+        "isCorrect": false
+      },
+      {
+        "label": 339,
+        "isCorrect": true
+      }
+    ]
+  },
+
+  {
+    "questionLabel": "Round 17 to the nearest tenth",
+    "choices": [
+      {
+        "label": 40,
+        "isCorrect": false
+      },
+      {
+        "label": 30,
+        "isCorrect": false
+      },
+      {
+        "label": 20,
+        "isCorrect": true
+      },
+      {
+        "label": 10,
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "questionLabel": "Multiply 12 x 8",
+    "choices": [
+      {
+        "label": 64,
+        "isCorrect": false
+      },
+      {
+        "label": 96,
+        "isCorrect": true
+      },
+      {
+        "label": 88,
+        "isCorrect": false
+      },
+      {
+        "label": 106,
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "questionLabel": "Divide 64/8",
+    "choices": [
+      {
+        "label": 4,
+        "isCorrect": false
+      },
+      {
+        "label": 7,
+        "isCorrect": false
+      },
+      {
+        "label": 6,
+        "isCorrect": false
+      },
+      {
+        "label": 8,
+        "isCorrect": true
+      }
+    ]
+  }
+]
