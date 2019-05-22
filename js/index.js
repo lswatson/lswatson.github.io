@@ -166,6 +166,7 @@ $(function(){
 
   function handleLoser() {
     // thanos image, thanos sound, add css animation bounceOutDown to infinity stones
+    $(".question-instruction p").hide()
     // remove infinite class
     $(".space-stone, .mind-stone, .power-stone, .reality-stone, .time-stone, .soul-stone").removeClass("infinite")
     // add class
