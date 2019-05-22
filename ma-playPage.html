@@ -2,7 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Play|Math Avengers</title>
+    <title>Play Math Avengers</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -51,33 +53,52 @@
         <div class="sidebar-hover-message">
           <p>
             <!-- (hover msg: explain each infinity stone) -->
+            <!-- The Space Stone gives the user power over space. Anyone holding the Space Stone can create a portal from one part of the universe to another. In the Marvel films, the Space Stone is hidden inside a blue cube called the Tesseract. -->
           </p>
         </div>
       </div>
 
       <div class="main-play">
+
         <div class="question-instruction">
           <p class=>Find the answer to the following question.</p>
         </div>
+
         <div class="question-container">
-          <div class="question">
-            <p></p>
+
+          <div class="question-main">
+
+            <div class="question">
+              <p></p>
+            </div>
+
+            <div class="multiple-choice">
+              <button type="button" name="choiceA" id="a" data-index="0">A</button>
+              <button type="button" name="choiceB" id="b" data-index="1">B</button>
+              <button type="button" name="choiceC" id="c" data-index="2">C</button>
+              <button type="button" name="choiceD" id="d" data-index="3">D</button>
+            </div>
+
           </div>
-          <div class="multiple-choice">
-            <button type="button" name="choiceA" id="a" data-index="0">A</button>
-            <button type="button" name="choiceB" id="b" data-index="1">B</button>
-            <button type="button" name="choiceC" id="c" data-index="2">C</button>
-            <button type="button" name="choiceD" id="d" data-index="3">D</button>
+
+          <div class="image-container">
+            <img src="images/marvel-infinity-gauntlet.jpg" alt="" id="winning-image">
+            <img src="images/infinitygauntlet-thanos.jpg" alt="" id="losing-image">
           </div>
+
           <div class="answer-message"></div>
+
           <div class="navigationPlay-button">
             <button type="button" name="next-button" id="next">Next Question</button>
             <button type="button" name="reset-button" id="reset">Play Again</button>
           </div>
 
-        </div>
-        </div>
+        </div> <!-- end of question-container-->
+      </div> <!-- end of main-play-->
 
+      <!-- add audio files to html, these are invisible by default -->
+      <audio id="winning-sound" src="audio/infinity-gauntlet.mp3"></audio>
+      <audio id="losing-sound" src="audio/thanos.mp3"></audio>
     </div>
 
     <footer>Copyright © 2019 Math Avengers</footer>

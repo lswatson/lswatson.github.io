@@ -10,6 +10,10 @@ body {
 
 }
 
+img {
+  max-width: 100%;
+}
+
 .body-container {
   /* background: #7B6FDE; */
 
@@ -139,7 +143,7 @@ footer {
   width: 38%;
   /* margin: 0px 40px; */
   padding: 10px;
-  border-right: solid 2px;
+  border-right: solid 4px;
   background-color: #000;
 
 }
@@ -160,6 +164,12 @@ footer {
 
 .question-instruction {
   padding-left: 30px;
+}
+
+.question-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .question {
@@ -232,6 +242,7 @@ div.infinity-stones {
 .sidebar p {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .infinity-stones-keeper img {
@@ -252,7 +263,7 @@ div.infinity-stones {
 }
 
 .question-instruction p {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .question div, .multiple-choice div, .answer-message div {
@@ -266,4 +277,26 @@ button#a, button#b, button#c, button#d {
 
 .answer-message {
   padding: 20px;
+}
+
+/* add hover css animation to infinity stones and hover message. image modal, rotated image menu */
+.infinity-stones img:hover {
+  transition-property: all;
+  transition-property: transform;
+  transition-duration: 1s;
+  /* overflow:hidden;
+  vertical-align:top;
+  margin:-14px;
+  box-shadow:0 0 15px; */
+}
+
+.sidebar-hover-message {
+  font-size: 6px;
+  color: yellow;
+}
+
+/* add css animation to buttons */
+
+.animate-once {
+  animation-iteration-count: 1;
 }

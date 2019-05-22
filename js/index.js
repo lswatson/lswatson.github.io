@@ -3,6 +3,7 @@ $(function(){
   $("#next").hide()
   $("#reset").hide()
   $(".space-stone, .mind-stone, .power-stone, .reality-stone, .time-stone, .soul-stone").hide()
+  $("#winning-image, #losing-image").hide()
 
   let allQuestions;
   // add point variable
@@ -54,8 +55,34 @@ $(function(){
 
   function printAnswerMsg() {
     let message
+    // ids of all 4 buttons
+    let buttonIds = ["a", "b", "c", "d"]
+
+    // id of the button that was selected
+    let selectedButtonId = $(this).attr("id")
+
+    // create a new array of all buttonIds that are NOT equal
+    // to the selectedButtonId
+    let disabledButtonIds = buttonIds.filter(function(buttonId) {
+      return buttonId !== selectedButtonId
+    })
+
+    console.log(disabledButtonIds)
+
+    // call disableButtons function that will be responsible for
+    // disabling the buttons of every button except the one that
+    // was selected
+    disableButtons(disabledButtonIds)
+
+
+
+
+
     console.log("index of button clicked", $(this).data("index"))
     console.log("button that was clicked", $(this).attr("name"))
+    console.log("id of button clicked", $(this).attr("id"))
+
+
 
     let answerChoiceIndex = parseInt($(this).data("index"))
     console.log("answerChoiceIndex", answerChoiceIndex)
@@ -66,16 +93,21 @@ $(function(){
       points = points + 1
       // show stone with id= stone-{points} // #stone-1, #stone-2, etc
       $(`#stone-${points}`).show()
+      $(`#stone-${points}`).addClass("animated infinite heartBeat delay-0s")
 
     } else {
       message = "You are wrong!"
       $("#reset").show()
       handleLoser()
+      playLosingSound()
+      showLosingImage()
     }
 
     if(points === 6){
       console.log("you won")
       handleWinner()
+      playWinningSound()
+      showWinningImage()
     }
 
     // display msg to screen
@@ -95,6 +127,9 @@ $(function(){
     // and display that question
 
     clearMsg()
+
+    console.log('enabling buttons')
+    enableButtons()
     $("#next").hide()
   }
 
@@ -106,7 +141,14 @@ $(function(){
   $("#reset").click(resetGame)
   function resetGame() {
     // hide stones, hide msg, show 1st question and choices
+    $(".space-stone, .mind-stone, .power-stone, .reality-stone, .time-stone, .soul-stone").removeClass("animated infinite heartBeat delay-0s bounceOutDown")
     $(".space-stone, .mind-stone, .power-stone, .reality-stone, .time-stone, .soul-stone").hide()
+
+    $(".question-main").show()
+    $("#winning-image, #losing-image").hide()
+
+
+    enableButtons()
     clearMsg()
     questionIndex = 0
     displayQuestion(questionIndex)
@@ -121,11 +163,70 @@ $(function(){
   }
 
   function handleLoser() {
-    // thanos image, thanos sound
+    // thanos image, thanos sound, add css animation bounceOutDown to infinity stones
+    // remove infinite class
+    $(".space-stone, .mind-stone, .power-stone, .reality-stone, .time-stone, .soul-stone").removeClass("infinite")
+    // add class
+    $(".space-stone, .mind-stone, .power-stone, .reality-stone, .time-stone, .soul-stone").addClass("animated bounceOutDown delay-0s")
+  }
+
+  function disableButtons(buttonIds) {
+    // iterate through array of buttonIds and disable the button
+    // associated with each id
+
+    buttonIds.forEach(function(id) {
+      $(`#${id}`).attr("disabled","true")
+    })
+  }
+
+  function enableButtons() {
+    console.log("calling enableButtons")
+    // enable all buttons by removing the disabled attribute
+    $("#a, #b, #c, #d").removeAttr("disabled")
+  }
+
+  function playWinningSound() {
+    // play infinity-gauntlet.mp3
+    $("audio#winning-sound")[0].play()
+  }
+
+  function playLosingSound() {
+    // play thanos.mp3
+    $("audio#losing-sound")[0].play()
+  }
+
+  function showLosingImage() {
+    // hide question-main, show losing-image, add css animation
+    $(".question-main").hide()
+    $("#losing-image").show()
+  }
+
+  function showWinningImage() {
+    $(".question-main").hide()
+    $("#winning-image").show()
 
   }
 
+  // add reset logic
+
+
+  // disable other buttons when one is selected, also add css style fading out the unselected buttons
+
+  // use jquery to select the element, use attr to specify 1. the string disabled and 2. that the value is true
+  // $("#a, #b, #c, #d").attr("disabled","true")
+
+
   // add hover message on each stone
+  // $(".space-stone").hover(stoneMsg)
+  // function stoneMsg() {
+  //   // $(".sidebar-hover-message").show()
+  //   $(".sidebar-hover-message").text("Space: The Space Stone gives the user power over space. Anyone holding the Space Stone can create a portal from one part of the universe to another.")
+  //   $(".sidebar-hover-message").fadeIn( 3000 );
+  //   // $(".sidebar-hover-message").fadeOut( 3000 );
+  //
+  // }
+
+
   // add animation to stone when user gets answer correct - pop and highlight
 
 
