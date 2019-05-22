@@ -300,3 +300,14 @@ button#a, button#b, button#c, button#d {
 .animate-once {
   animation-iteration-count: 1;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#winning-image {
+  width:45%;
+  /* height: 45%; */
+}

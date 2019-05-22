@@ -88,6 +88,7 @@ $(function(){
     console.log("answerChoiceIndex", answerChoiceIndex)
 
     if (answerChoices[answerChoiceIndex].isCorrect === true) {
+      playCorrectAnswer
       message = "You are correct!"
       $("#next").show()
       points = points + 1
@@ -105,8 +106,8 @@ $(function(){
 
     if(points === 6){
       console.log("you won")
-      handleWinner()
       playWinningSound()
+      handleWinner()
       showWinningImage()
     }
 
@@ -156,8 +157,9 @@ $(function(){
   }
 
   function handleWinner() {
-    // when all 6 questions are correct- hide next button, new message, image gauntlet, gauntlet sound, show play again button
+    // when all 6 questions are correct- hide next button, new message, image gauntlet, gauntlet sound, show play again button, hide question-intruction
     $("#next").hide()
+    $(".question-instruction p").hide()
     $(".answer-message").text("You won!")
     $("#reset").show()
   }
@@ -207,10 +209,18 @@ $(function(){
 
   }
 
+  // add correct answer sound when earn each infinity stone
+  function playCorrectAnswer() {
+    $("audio#correct-answer")[0].play()
+
+  }
+
   // add reset logic
 
 
   // disable other buttons when one is selected, also add css style fading out the unselected buttons
+
+
 
   // use jquery to select the element, use attr to specify 1. the string disabled and 2. that the value is true
   // $("#a, #b, #c, #d").attr("disabled","true")
