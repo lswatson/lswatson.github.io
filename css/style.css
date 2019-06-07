@@ -202,6 +202,8 @@ footer {
 
 .main-about {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 60px;
   margin-bottom: 90px;
@@ -210,11 +212,25 @@ footer {
   /* border: 2px, solid; */
 }
 
+/* .main-about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+} */
+
 .math-skills, .instructions {
   padding: 40px;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
   width: 38%;
+}
+
+.infinity-stones-keeper img {
+  width: 85%;
+  height: 85%;
+  margin-top: 50px;
+
 }
 
 div.infinity-stones {
@@ -243,12 +259,6 @@ div.infinity-stones {
   font-size: 20px;
   text-align: center;
   margin-bottom: 40px;
-}
-
-.infinity-stones-keeper img {
-  width: 85%;
-  height: 85%;
-
 }
 
 .infinity-stones div {
