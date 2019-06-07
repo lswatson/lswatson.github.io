@@ -88,12 +88,17 @@ $(function(){
     console.log("answerChoiceIndex", answerChoiceIndex)
 
     console.log('**** points ****', points)
-    
+
     if (answerChoices[answerChoiceIndex].isCorrect === true) {
-      playCorrectAnswer
+      points = points + 1
+
+      if (points !== 6){
+        playCorrectAnswerSound()
+      }
+
       message = "You are correct!"
       $("#next").show()
-      points = points + 1
+
       // show stone with id= stone-{points} // #stone-1, #stone-2, etc
       $(`#stone-${points}`).show()
       $(`#stone-${points}`).addClass("animated infinite heartBeat delay-0s")
@@ -214,7 +219,7 @@ $(function(){
   }
 
   // add correct answer sound when earn each infinity stone
-  function playCorrectAnswer() {
+  function playCorrectAnswerSound() {
     $("audio#correct-answer")[0].play()
 
   }
