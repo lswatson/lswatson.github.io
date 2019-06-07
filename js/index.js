@@ -50,7 +50,7 @@ $(function(){
 
 
 
-  // listen for click event on all buttons
+  // listen for click event on all answer choice buttons
   $(".multiple-choice button").click(printAnswerMsg);
 
   function printAnswerMsg() {
@@ -83,10 +83,12 @@ $(function(){
     console.log("id of button clicked", $(this).attr("id"))
 
 
-
+    // the following code determines if the answer choice is correct or incorrect
     let answerChoiceIndex = parseInt($(this).data("index"))
     console.log("answerChoiceIndex", answerChoiceIndex)
 
+    console.log('**** points ****', points)
+    
     if (answerChoices[answerChoiceIndex].isCorrect === true) {
       playCorrectAnswer
       message = "You are correct!"
@@ -152,6 +154,7 @@ $(function(){
     enableButtons()
     clearMsg()
     questionIndex = 0
+    points = 0
     displayQuestion(questionIndex)
     $("#reset").hide()
   }
